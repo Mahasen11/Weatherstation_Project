@@ -1,0 +1,20 @@
+FEATURES:
+Minimum: Display current weather information on localhost website.
+Expansion Ideas: List of weatherdata with customizable plotting function.
+
+First Deadline: 09.09.21:
+Build Minimum Working Prototype running on localhost
+
+HTML/CSS : Jan Affeltranger and Mahasen Kudadeniya
+Typescript/Backend : Andras Marosi
+
+Architecture:
+                        +----------------heroku------------+
+                        |  +--------+   +------+           |  +----------+
+Client---request--------+->| server |-->| home |<--getData-+--| database |
+      <-response--------+--|        |<--|      |           |  |          |
+                        |  |        |   +------+           |  |          |
++--------------+        |  |        |     +-----------+    |  |          |
+| Raspberry Pi |---data-+->|        |---->| dataInput |----+->|          |
++--------------+        |  +--------+     +-----------+    |  +----------+
+                        +----------------------------------+

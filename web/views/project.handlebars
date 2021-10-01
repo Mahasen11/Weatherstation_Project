@@ -1,0 +1,173 @@
+<div id="project">
+    <fieldset>
+        <legend>
+            <h1>The Course</h1>
+        </legend>
+        <p>This project is part of the precollege course "yoth2engineers" organized by the ZHAW School of
+            Engineering
+            from Winterthur (<a href="https://www.zhaw.ch/en/engineering/study/pre-college/" target="_blank">learn
+                more</a>).
+            The idea is to familiarize the candidates in current web technologies such as HTML/CSS, programming,
+            webhosting, databases etc. Depending on what they have chosen to study later on the participants get
+            assigned to different projects. Ours was a weatherstation fom which we had a one month time to complete.
+        </p>
+    </fieldset>
+
+    <fieldset>
+        <legend>
+            <h1 style="color: var(--magenta); text-shadow: 0px 0px 20px var(--magenta); ">The Purpose</h1>
+        </legend>
+        <p>There are many weatherstations out there in this wide world we live in. And many of those have a website
+            displaying the current weather conditions. Our goal was to create a website where on one hand the
+            average
+            person can have a quick glance at the current climactic situation in Winterthur and continue on with
+            their day, on the other hand the
+            professional data analyst can also get some use out of it by having a custom range selector with all the
+            data being displayed in a graph for a clean overview and in a table for precise lookup.</p>
+    </fieldset>
+
+    <fieldset>
+        <legend>
+            <h1 style="color: var(--red); text-shadow: 0px 0px 20px var(--red);">The Architecture</h1>
+        </legend>
+        <p>
+        <pre>
+                              +--------------------------------------------------------------------------------+
+                              |                          heroku (Cloud Hosting)                                |
+                              |                                                                                |   +----------+
+                              |  +--------+   +------------------+                    +---------+              |   | database |
++--------+                    |  | server |   |  home/detailed   |                    | getData |              |   |          |
+|        |--Request(GET/POST)-+->|        |-->|                  |---function-call--->|         |---SQL-Query--+-->|          |
+| Client |                    |  |        |   |                  |                    |         |              |   |          |
+|        |<----Response-------+--+--------+---| SSR (handlebars) |<-------JSON--------|         |<-------------+---|          |
++--------+                    |  |        |   +------------------+                    +---------+              |   |          |
+                              |  |        |                                                                    |   |          |
++--------------+              |  |        |                            +-----------+                           |   |          |
+| Raspberry Pi |--data(POST)--+->|        |--------------------------->| dataInput |---------------------------+-->|          |
++--------------+              |  +--------+                            +-----------+                           |   +----------+
+                              +--------------------------------------------------------------------------------+
+            </pre>
+        </p>
+    </fieldset>
+
+    <fieldset>
+        <legend>
+            <h1 style="color: var(--cyan); text-shadow: 0px 0px 20px var(--cyan);">The Technology</h1>
+        </legend>
+
+        <details>
+            <summary>Frontend</summary>
+
+            <div>
+                <h3>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                        alt="JavaScript" />
+                </h3>
+            </div>
+        </details>
+
+        <hr>
+
+        <details>
+            <summary>Backend</summary>
+            <div>
+                <h3>Server Technology<br>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                        alt="TypeScript" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg"
+                        alt="node.js" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg"
+                        alt="Node Package Manager" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+                        alt="express.js" style="background: white;" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/handlebars/handlebars-original-wordmark.svg"
+                        alt="Handlebars" style="background: white;" />
+                </h3>
+
+                <h3>Cloud Hosting<br>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/heroku/heroku-plain.svg"
+                        alt="heroku" />
+                </h3>
+
+                <h3>Database<br>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+                        alt="Postgres" />
+                </h3>
+
+                <h3>Data Collecting<br>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg"
+                        alt="Raspberry Pi Logo" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
+                        alt="Linux" />
+                </h3>
+            </div>
+        </details>
+
+        <hr>
+
+        <details>
+            <summary>Developer Tools</summary>
+            <div>
+                <h3>Version Control System<br>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="git" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                        alt="github" style="background: white;" />
+                </h3>
+
+                <h3>Coding Software<br>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
+                        alt="Visual Studio Code" />
+                </h3>
+
+                <h3>Miscellaneous<br>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
+                        alt="Google" />
+                    <img src="images/stackoverflow.png" alt="Stackoverflow">
+                    <a href="https://devicon.dev" target="_blank"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/devicon/devicon-original.svg" /></a>
+                </h3>
+            </div>
+        </details>
+
+    </fieldset>
+
+    <fieldset>
+        <legend>
+            <h1>The Conclusion</h1>
+        </legend>
+        <h2 style="color: var(--magenta);">The Good</h2>
+        <ul>
+            <li>The project is up and running and can be accessed through the internet.</li>
+            <li>We have made some first experiences in what it means to be part of a software development team and how
+                to coordinate with each other.</li>
+            <li>We have learnt a lot about current web technologies.</li>
+        </ul>
+
+        <h2 style="color: var(--cyan);">The Bad</h2>
+        <ul>
+            <li>Node.js and the node package manager because it has been consistently breaking on us. Our progress was
+                constantly halted because a package was no loner working as intended.</li>
+        </ul>
+
+        <h2 style="color: var(--red);">The Unaccomplished</h2>
+        <ul>
+            <li>
+                We also wanted the professional user to be able to download the data in different file formats but we ran out of time
+                before we could implement that feature.</li>
+        </ul>
+
+        <h2>What we've learnt</h2>
+        <ul>
+            <li>git branches. The best thing we have learnt by far to maximize our productivity while minimizing the
+                amounts of conflicts.</li>
+            <li>Teamwork: We have learnt how to coordinate our efforts to minimize the amount of merge conflicts
+                happening.</li>
+            <li>Choose the technologies and tools wisely because they're not always guaranteed to cooperate with you.</li>
+        </ul>
+    </fieldset>
+</div>
+</body>
+
+</html>

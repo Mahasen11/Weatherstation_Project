@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	
+	
+	<meta charset="utf-8">
+	<title>Weather Today</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+	<link rel="stylesheet" href="css/main.css" title="Default Style">
+	<link rel="stylesheet" href="css/detailed.css">
+	<link rel="stylesheet" href="css/project.css">
+	<link rel="stylesheet" href="css/contact.css">
+	<link rel="stylesheet" href="css/us.css">
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+	</style>
+	
+</head>
+
+<body>
+	<a href="/">
+		<header>
+			<img id="logo" img src="images/favicon.png" alt="our logo">
+			<h1>Weather Winterthur</h1>
+			<img id="logo" img src="images/favicon.png" alt="our logo">
+		</header>
+	</a>
+
+	{{!-- <form action="/search">
+		<input type="text" placeholder="Search..." name="search">
+		<button type="submit">Search</button>
+	</form> --}}
+
+	<aside>
+		<a class="{{#if activeHome}} active {{/if}}" href="/">Current Weather</a>
+		<a class="{{#if activeDetailed}} active {{/if}}" href="detailed">Detailed Version</a>
+		<a class="{{#if activeProject}} active {{/if}}" href="project">The Project</a>
+		<a class="{{#if activeContact}} active {{/if}}" href="contact">Contact</a>
+		<a class="{{#if activeAboutUs}} active {{/if}}" href="us">About US</a>
+		<a class="{{#if activeWebcams}} active {{/if}}" href="https://en.swisswebcams.ch/karte#@46.755219,8.5,8z"
+			target="_blank">Webcams</a> 
+	</aside>
+   
+	{{{body}}}
+
+
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+/* project */
+#project {
+	color:white;
+}
+#project * {
+	font-size: 16px;
+}
+
+#project .icon{
+	height: 50px;
+	width: 50px;
+}
+#project h1{
+	font-family: 'race1', sans-serif;
+	font-size: 35px;
+	margin: 0;
+}
+
+#project img{
+	display: inline-block;
+	height:50px;
+	margin: 5px 10px 0 0;
+	border-radius: 5px;
+}
+#project h3 {
+	display: inline-block;
+	margin-bottom: 5px;
+	text-align: center;
+}
+#project i{
+	font-size: 50px;
+}
+#project a{
+	color: var(--yellow);
+}
+
+#project p{
+	display: inline;
+	margin: 0;
+}
+
+#project fieldset {
+	margin-bottom: 15px;
+	margin-right: 50px;
+	background: linear-gradient(45deg, var(--marine), var(--violet));
+}
+#project summary {
+	cursor: pointer;
+}
+
+#project details>div {
+	position: static;
+	padding-left: 20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+#project fieldset>details>summary {
+	font-size: 20px;
+}
+
+#project fieldset>h2 {
+	display: block;
+	text-align: left;
+}
+
+#project fieldset>ul {
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+/* /project */

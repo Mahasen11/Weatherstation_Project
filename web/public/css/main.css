@@ -1,0 +1,212 @@
+@font-face {
+	font-family: 'flourground';
+	src: url("../fonts/flourground/flourground-webfont.woff2") format('woff2'), url("../fonts/flourground/flourground-webfont.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'iron';
+	src: url("../fonts/iron/iron-webfont.woff2") format('woff2'), url("../fonts/iron/iron-webfont.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'race1';
+	src: url("../fonts/race1 chiseled/race1_brannt_chiseled_ncv-webfont.woff2") format('woff2'), url("../fonts/race1 chiseled/race1_brannt_chiseled_ncv-webfont.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'sederegular';
+	src: url("../fonts/sede/sede-webfont.woff2") format('woff2'), url("../fonts/sede/sede-webfont.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'street cred';
+	src: url("../fonts/street cred/street_cred-webfont.woff2") format('woff2'), url("../fonts/street cred/street_cred-webfont.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+:root{
+	scrollbar-width: thin;
+	font-family: 'Roboto', sans-serif;
+	--violet: #270245;
+	--purple: #871a85;
+	--red: #ff2941;
+	--yellow: #feff38;
+	--magenta: #fe18d3;
+	--cyan: #00f7f1;
+	--marine: #00094b;
+	scrollbar-color: var(--magenta) var(--cyan);
+}
+
+*{
+	box-sizing: border-box;
+}
+
+/* Main */
+body{
+	overflow-x: hidden;
+	position: relative;
+	margin: 0;
+	/* min-height: 150vh; */
+	background: linear-gradient(-45deg, var(--violet), var(--marine));
+}
+
+header{
+	text-align: center;
+	margin: 20px;
+	border-radius: 45px;
+	background: var(--marine);
+	font-size: 50px;
+	box-shadow: 0px 0px 15px 7px var(--cyan), inset 0px 0px 15px 7px var(--cyan);
+	border: 7px solid var(--cyan);
+}
+
+a {
+	text-decoration: none;
+}
+
+header * {
+	display: inline;
+}
+
+#logo{
+	width: 50px;
+}
+
+header h1{
+	font-family: 'sederegular', 'Roboto', sans-serif;
+	margin: 0;
+	color: var(--red);
+	background: linear-gradient(-45deg, var(--purple), var(--red), var(--yellow), var(--magenta), var(--cyan));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	color: transparent;
+	background-repeat: repeat-x;
+	letter-spacing: 10px;
+}
+
+aside{
+	position: sticky;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	min-width: 100px;
+	text-align: center;
+	border-radius: 0px 40px 40px 0px;
+	width: 190px;
+}
+
+aside a {
+	font-family: 'street cred', 'Roboto', sans-serif;
+	position: relative;
+	font-size: 22px;
+	padding: 12px 0;
+	margin: 15px 0;
+	border-radius: 0px 40px 40px 0px;
+	border: 4px solid var(--magenta);
+	box-shadow: inset -5px 0px 10px 5px var(--magenta), 0px 0px 10px 5px var(--magenta);
+	transition: all 0.5s;
+	color: var(--magenta);
+	text-shadow: 0px 0px 5px var(--magenta);
+	border-left: none;
+	transition: all 0.5s ease;
+}
+
+aside a::before{
+	position: absolute;
+	content: '';
+	left: 0;
+	top: 0;
+	border-radius: 0px 40px 40px 0px;
+	box-shadow: 0px 0px 10px 10px var(--magenta);
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	z-index: -1;
+	transition: all 0.5s ease;
+}
+
+aside a:hover{
+	background:  var(--magenta);
+	color: var(--marine);
+	text-shadow: none;
+}
+
+aside a:hover::before {
+	opacity: 1;
+}
+
+.active{
+	background: var(--magenta);
+	color: var(--marine);
+	text-shadow: none;
+	box-shadow: 0px 0px 10px 10px var(--magenta);
+}
+/* /Main */
+
+div{
+	font-family: 'Roboto', serif;
+	position: absolute;
+	left: 250px;
+	top: 170px;
+}
+
+div h2{
+	margin: 0;
+	text-align: right;
+	display: inline;
+	color: var(--yellow);
+	margin-right: 40px;
+}
+
+div h1{
+	text-align: center;
+	margin: 0;
+	display: block;
+	font-size: 200px;
+	margin-left: 50px;
+	color: var(--yellow);
+	text-shadow: 0px 0px 20px var(--yellow);
+}
+
+div img{
+	height: 150px;
+}
+
+input, select, textarea{
+	scrollbar-width: thin;
+}
+
+body{
+	background-image: url("../images/4Kimg.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+/* Home */
+
+.home p{
+	background: linear-gradient(to right, var(--cyan), var(--magenta));
+	border: 5px solid var(--purple);
+	border-radius: 20px;
+	box-shadow: 0px 0px 15px 10px var(--purple);
+	/* , inset 0px 0px 15px 10px var(--purple); */
+	width: 350px;
+	padding: 10px;
+	margin: 20px;
+	font-size: 30px;
+	display: inline-block;
+	text-align: center;
+}
+
+.home p img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	align-self: center;
+}
+/* /Home */

@@ -1,0 +1,28 @@
+<div class="home">
+  {{#if isPolluted}}
+  <h1><img src="images/biohazard.gif" alt="Polluted">
+    <script>alert("HIGH POLLUTION RISK!!! DONT BREATHE!!!");
+      let body = document.querySelector('body');
+       body.style.background = "url('../images/chernobyl.jpg')";
+    </script>
+    {{else}}
+    {{#if isSunny}}
+    {{#if isRaining}}
+    <h1><img src="images/rainbow.gif" alt="Rainbow">
+      {{else }}
+      <h1><img src="images/sunny.gif" alt="Sun">
+        {{/if}}
+        {{else if isRaining }}
+        <h1><img src="images/rain.gif" alt="Sun">
+          {{else}}
+          <h1><img src="images/cloud.gif" alt="Sun">
+            {{/if}}
+            {{/if}}
+            {{temp}}°C</h1>
+
+
+
+          <p><img src="images/pressure icon.png"> Pressure: {{press}} hPa</p>
+          <p><img src="images/airquality.png"> Air Quality: {{airq}}</p>
+          <p><img src="images/humidityicon.png"> Humidity: {{humi}}% </p>
+</div>

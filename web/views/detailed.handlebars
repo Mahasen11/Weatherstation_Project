@@ -1,0 +1,217 @@
+<div>
+
+  <div id="rangeSelector">
+
+    <form action="detailed" method="post">
+
+      <h2>Select a time range:</h2><br>
+      <input id="24h" type="radio" name="range" value="24h" {{#if _24h }} checked {{/if}}><label for="24h">24 hours</label><br>
+      <input id="1m" type="radio" name="range" value="1m" {{#if _1m }} checked {{/if}}><label for="1m">1 month</label><br>
+      <input id="3m" type="radio" name="range" value="3m" {{#if _3m }} checked {{/if}}><label for="3m">3 months</label><br>
+      <input id="6m" type="radio" name="range" value="6m" {{#if _6m }} checked {{/if}}><label for="6m">6 months</label><br>
+      <input id="1y" type="radio" name="range" value="1y" {{#if _1y }} checked {{/if}}><label for="1y">1 year</label><br>
+      <input id="custom" type="radio" name="range" value="custom" {{#if custom }} checked {{/if}}><label
+        for="custom">Custom:</label><br>
+
+      <p>From:</p>
+      <input type="date" name="from" min="2021-09-14" value="2021-09-14" id="from">
+      <p>Hour:</p>
+      <select name="fromHour" id="fromHour">
+        <option value="00" selected>00:00</option>
+        <option value="01">01:00</option>
+        <option value="02">02:00</option>
+        <option value="03">03:00</option>
+        <option value="04">04:00</option>
+        <option value="05">05:00</option>
+        <option value="06">06:00</option>
+        <option value="07">07:00</option>
+        <option value="08">08:00</option>
+        <option value="09">09:00</option>
+        <option value="10">10:00</option>
+        <option value="11">11:00</option>
+        <option value="12">12:00</option>
+        <option value="13">13:00</option>
+        <option value="14">14:00</option>
+        <option value="15">15:00</option>
+        <option value="16">16:00</option>
+        <option value="17">17:00</option>
+        <option value="18">18:00</option>
+        <option value="19">19:00</option>
+        <option value="20">20:00</option>
+        <option value="21">21:00</option>
+        <option value="22">22:00</option>
+        <option value="23">23:00</option>
+      </select>
+
+      <br>
+      <p>Until:</p>
+      <input type="date" name="until" min="2021-09-14" id="until">
+      <p>Hour:</p>
+      <select name="untilHour" id="untilHour">
+        <option value="00">00:00</option>
+        <option value="01">01:00</option>
+        <option value="02">02:00</option>
+        <option value="03">03:00</option>
+        <option value="04">04:00</option>
+        <option value="05">05:00</option>
+        <option value="06">06:00</option>
+        <option value="07">07:00</option>
+        <option value="08">08:00</option>
+        <option value="09">09:00</option>
+        <option value="10">10:00</option>
+        <option value="11">11:00</option>
+        <option value="12">12:00</option>
+        <option value="13">13:00</option>
+        <option value="14">14:00</option>
+        <option value="15">15:00</option>
+        <option value="16">16:00</option>
+        <option value="17">17:00</option>
+        <option value="18">18:00</option>
+        <option value="19">19:00</option>
+        <option value="20">20:00</option>
+        <option value="21">21:00</option>
+        <option value="22">22:00</option>
+        <option value="23" selected>23:00</option>
+      </select>
+
+      <br>
+
+      <input type="submit" value="Get data" id="getData">
+    </form>
+
+  </div>
+
+  <div id="wrap">
+    <table id="data">
+      <tr>
+        <th>Time and Date [UTC Time]</th>
+        <th>Temperature [°C]</th>
+        <th>Pressure [hPa]</th>
+        <th>Air Quality[Ref Value]</th>
+        <th>Humidity [%rel]</th>
+      </tr>
+      {{#each data}}
+      <tr>
+        {{#each this}}
+        <td>
+          {{this}}
+        </td>
+        {{/each}}
+      </tr>
+      {{/each}}
+    </table>
+  </div>
+</div>
+<canvas id="myChart"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  let tableData = document.querySelectorAll('tr');
+
+  let labels = [];
+
+  const data = {
+    labels: labels,
+    datasets: [
+      {
+        label: 'Temperature',
+        backgroundColor: 'red',
+        borderColor: 'red',
+        data: [],
+        xAxisID: 'xTime',
+        yAxisID: 'yRest'
+      },
+      {
+        label: 'Pressure',
+        backgroundColor: 'yellow',
+        borderColor: 'yellow',
+        data: [],
+        xAxisID: 'xTime',
+        yAxisID: 'yPressure'
+      },
+      {
+        label: 'Air Quality',
+        backgroundColor: 'magenta',
+        borderColor: 'magenta',
+        data: [],
+        xAxisID: 'xTime',
+        yAxisID: 'yRest'
+      },
+      {
+        label: 'Humidity',
+        backgroundColor: 'cyan',
+        borderColor: 'cyan',
+        data: [],
+        xAxisID: 'xTime',
+        yAxisID: 'yRest'
+      }
+    ]
+  };
+
+  for (let index = 1; index < tableData.length; index++) {
+    labels.push(tableData.item(index).firstChild.nextElementSibling.innerText); // timestamp
+
+    data.datasets[0].data.push(tableData.item(index).children[0].nextElementSibling.innerText); // temperature
+
+    data.datasets[1].data.push(tableData.item(index).children[1].nextElementSibling.innerText); // pressure
+
+    data.datasets[2].data.push(tableData.item(index).children[2].nextElementSibling.innerText); // air quality
+
+    data.datasets[3].data.push(tableData.item(index).children[3].nextElementSibling.innerText); // humidity
+  }
+
+  const config = {
+    type: 'line',
+    data: data,
+    options: {
+      scales: {
+        xTime: {
+          display: true,
+          title: {
+            display: true,
+            align: 'center',
+            text: 'Time in UTC',
+            color: 'white'
+          },
+          grid: {
+            color: 'lightgrey'
+          }
+        },
+        yPressure: {
+          display: true,
+          title: {
+            display: true,
+            align: 'center',
+            text: 'Pressure',
+            color: 'yellow'
+          },
+          position: 'right',
+          grid: {
+            color: 'transparent'
+          }
+        },
+        yRest: {
+          display: true,
+          title: {
+            display: true,
+            alignt: 'center',
+            text: 'Temperature, Air Quality, Humidity',
+            color: 'white'
+          },
+          position: 'left',
+          suggestedMin: 0,
+          suggestedMax: 100,
+          grid: {
+            color: 'transparent'
+          }
+        }
+      }
+    }
+  };
+
+  var myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+</script>
+<script src="js/script.js"></script>

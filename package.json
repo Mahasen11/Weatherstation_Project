@@ -1,0 +1,31 @@
+{
+  "name": "weatherstation_MKA",
+  "version": "1.0.0",
+  "description": "The template consists of two separate projects:",
+  "main": "web/server.js",
+  "scripts": {
+    "start": "node web/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.zhaw.ch/Vorpraktikum-IT/weatherstation_MKA"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/errorhandler": "^1.5.0",
+    "@types/express": "^4.17.13",
+    "@types/express-handlebars": "^5.3.1",
+    "@types/node-fetch": "^3.0.3",
+    "@types/pg": "^8.6.1",
+    "dotenv": "^10.0.0",
+    "errorhandler": "^1.5.1",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.4",
+    "node-fetch": "2.6.2",
+    "npm": "^7.22.0",
+    "pg": "^8.7.1",
+    "typescript": "^4.4.2"
+  }
+}

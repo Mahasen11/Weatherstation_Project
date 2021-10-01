@@ -1,0 +1,109 @@
+/* Detailed */
+table, th, td{
+	color: var(--magenta);
+	border: 1px solid var(--magenta);
+}
+
+tr th{
+	position: sticky;
+	top: 0;
+	background: var(--marine);
+}
+
+td{
+	color: var(--yellow);
+}
+
+th{
+	color: var(--red);
+}
+
+
+#rangeSelector{
+	left: 0;
+	top: 0;
+	width: 350px;
+	height: 600px;
+}
+
+#rangeSelector, #wrap, #radiobuttons{
+	accent-color: var(--magenta);
+}
+
+#rangeSelector * {
+	color: var(--cyan);
+}
+
+#rangeSelector h2{
+	color: var(--red);
+	font-size: 25px;
+}
+
+#rangeSelector p, #rangeSelector input{
+	display: inline;
+	margin: 0;
+	padding: 0;
+	font-size: 16px;
+}
+
+#rangeSelector p{
+	color: var(--yellow);
+	margin-left: 10px;
+}
+
+#rangeSelector label{
+	color: var(--yellow);
+	margin-left: 5px;
+	font-size: 16px;
+}
+
+#rangeSelector br{
+	display: block;
+	margin-top: 10px;
+}
+
+#rangeSelector input,#rangeSelector select{
+	box-shadow: none;
+	border: none;
+	border-radius: 10px;
+	color: var(--violet);
+	background: linear-gradient(to top, var(--magenta), var(--cyan));
+}
+
+#rangeSelector select{
+	margin: 0;
+	padding: 0;
+	width: 65px;
+	float: none;
+}
+
+#rangeSelector #getData{
+	margin-top: 10px;
+	margin-left: 80px;
+	width: 120px;
+	height: 30px;
+	font-size: 16px;
+	padding: 2px;
+}
+
+#rangeSelector #until{
+	margin-left: 5px;
+}
+
+#wrap{
+	top: 0px;
+	left: 360px;
+	max-height: 400px;
+	width: max-content;
+	overflow: scroll;
+	overflow-x: hidden;
+	scrollbar-width: thin;
+	display: block;
+	background: linear-gradient(45deg, var(--marine), var(--violet));
+}
+
+canvas {
+	background: linear-gradient(45deg, var(--marine), var(--violet));
+	margin: -50px 10px 10px 230px;
+}
+/* /Detailed */
